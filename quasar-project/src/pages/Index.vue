@@ -20,7 +20,7 @@ export default {
     return {
       nodes: [
         { id: 1, name: "192.168.2.1" },
-        { id: 2, name: "192.168.2.128" },
+        { id: 2, name: "192.168.2.123" },
         { id: 3, name: "192.168.2.2", _color: "orange" },
         { id: 4, name: "192.168.2.3" },
         { id: 5, name: "192.168.2.4" },
