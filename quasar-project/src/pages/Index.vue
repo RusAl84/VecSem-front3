@@ -29,6 +29,31 @@
       :options="options"
     ></d3-network></q-card-section>
     ></q-card>
+    <q-card class="chatmessages">
+      <div class="flexrow">
+        <div>
+          <q-card-section>
+            <div class="text-h6">Загрузка модели:</div>
+          </q-card-section>
+        </div>
+        <div>
+          <q-card-section>
+            <q-uploader
+              :url="hostae_uploadaem"
+              label="Загрузите модель векторной семантики .model/*"
+              square
+              flat
+              bordered
+              single
+              @uploaded="fileUploadedM"
+              accept=".model, semanticModel/*"
+              style="min-width: 900px; max-width: 900px"
+            />
+          </q-card-section>
+        </div>
+      </div>
+    </q-card>
+  </q-page>
   </div>
 </template>
 
@@ -45,28 +70,12 @@ export default {
       optionsT: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
       threshold: ref(2),
       nodes: ref([
-        { id: 1, name: "192.168.2.1" },
-        { id: 2, name: "192.168.2.123" },
-        { id: 3, name: "192.168.2.2", _color: "orange" },
-        { id: 4, name: "192.168.2.3" },
-        { id: 5, name: "192.168.2.4" },
-        { id: 6, name: "192.168.2.5" },
-        { id: 7, name: "192.168.2.6" },
-        { id: 8, name: "192.168.2.7" },
-        { id: 9, name: "192.168.2.254" },
-        { id: 10, name: "192.168.2.8" },
+        { id: 1, name: "" },
+        { id: 2, name: "" },
       ]),
       links: ref([
-        { sid: 1, tid: 2, _color: "red" },
-        { sid: 2, tid: 8, _color: "f0f" },
-        { sid: 3, tid: 4, _color: "rebeccapurple" },
-        { sid: 4, tid: 5 },
-        { sid: 5, tid: 6 },
-        { sid: 7, tid: 8 },
-        { sid: 5, tid: 8 },
-        { sid: 3, tid: 8 },
-        { sid: 7, tid: 9 },
-        { sid: 9, tid: 10, _color: "blue" },
+        { sid: 1, tid: 2},
+        { sid: 2, tid: 1},
       ]),
       options: {
         force: 3000,
@@ -78,3 +87,22 @@ export default {
   },
 };
 </script>
+<style lang="sass">
+.page
+  padding-bottom: 10px
+  padding-top: 10px
+  padding-left: 10px
+  padding-r: 10px
+
+.chatmessages
+  padding: 10px
+  margin: 10px
+.flexrowЁ
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+.editorclass
+  max-height: 500px
+.inputtext
+  width: 800px
+</style>
